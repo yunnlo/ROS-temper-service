@@ -6,7 +6,7 @@ import time
 import random
 import rospy
 from std_msgs.msg import Float32MultiArray
-from temper.srv import *
+from Temper.srv import *
 
 
 class MLXTemper:
