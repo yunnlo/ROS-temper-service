@@ -2,7 +2,7 @@
 
 import sys
 import rospy
-from beginner_tutorials.srv import *
+from Temper.srv import *
 
 def temper_client():
     rospy.wait_for_service('temper')
