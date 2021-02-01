@@ -17,6 +17,8 @@ def temper_client():
         print ("Service call failed: %s"%e)
 
 if __name__ == "__main__":
-       a=math.floor(10*temper_client())/10
+       a=temper_client()*10+0.5
+       a=int(a)
+       a=float(a)/10
        print (a)
 
