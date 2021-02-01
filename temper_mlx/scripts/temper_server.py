@@ -1,4 +1,6 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
+
+from __future__ import print_function
 
 import serial
 import threading
@@ -6,8 +8,7 @@ import time
 import random
 import rospy
 from std_msgs.msg import Float32MultiArray
-from Temper.srv import *
-
+from temper_mlx.srv import *
 
 class MLXTemper:
     def __init__(self):
@@ -16,7 +17,7 @@ class MLXTemper:
         if not self.arduino.is_open:
             self.arduino.open()
 
-        self.MLX_t = threading.Thread(target=self.get_data, daemon=True)
+        self.MLX_t = threading.Thread(target=self.get_data)
         self.MLX_t.start()
         time.sleep(0.5)
     

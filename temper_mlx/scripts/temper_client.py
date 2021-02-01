@@ -1,8 +1,11 @@
-#! /usr/bin/env python3
+#! /usr/bin/env python
+
+from __future__ import print_function
 
 import sys
 import rospy
-from Temper.srv import *
+import math
+from temper_mlx.srv import *
 
 def temper_client():
     rospy.wait_for_service('temper')
@@ -14,6 +17,6 @@ def temper_client():
         print ("Service call failed: %s"%e)
 
 if __name__ == "__main__":
-
-       print (temper_client())
+       a=math.floor(10*temper_client())/10
+       print (a)
 
